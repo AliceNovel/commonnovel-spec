@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Anov Syntax for Alice Novel v0.9.3 | Commonnovel Spec </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Anov Syntax for Alice Novel v0.9.3 | Commonnovel Spec ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/AliceNovel/CommonNovel/blob/45/merge/docs/version/v0.0.x/novel-v0.9.3.ja.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="Commonnovel Spec">
+            Commonnovel Spec
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="anov-syntax-for-alice-novel-v093">Anov Syntax for Alice Novel v0.9.3</h1>
+
+<h2 id="目的">目的</h2>
+<p>Anov 構文は、Markdown ライクなノベルゲーム向けの軽量構文を開発することを目的としています。</p>
+<h2 id="構文のルール">構文のルール</h2>
+<p>Anov 構文は、改行と次の改行の間を1単位としています。(以降、この1単位を<strong>節</strong>と呼称します)</p>
+<h3 id="節部の読み込み">節部の読み込み</h3>
+<pre><code>- Alice Novel
+[Alice Novel にようこそ!]
+
+[新しいゲーム開発体験をしましょう。]
+</code></pre>
+<p>を例とします。この場合は、</p>
+<pre><code>- Alice Novel
+[Alice Novel にようこそ!]
+</code></pre>
+<p>がはじめに読み込まれます。続いて、<kbd>Enter</kbd> を押すと、</p>
+<pre><code>[新しいゲーム開発体験をしましょう。]
+</code></pre>
+<p>が読み込まれます。</p>
+<p>このように、Alice Novel では節ごとに読み込みが行われます。</p>
+<h3 id="節部読み込みの例外">節部読み込みの例外</h3>
+<p>基本的には、1節でできることは1命令に1つです。</p>
+<p>つまり、</p>
+<pre><code>[こんにちは]
+
+[こんばんは]
+</code></pre>
+<p>は標準的な構文ですが、</p>
+<pre><code>[こんにちは]
+[こんばんは]
+</code></pre>
+<p>は開発者の想定している構文ではありません。(エラーにはならず、正常に動きますが、アプリケーションによって挙動が異なるため、利用を推奨していません)</p>
+<p>挙動としては、Alice Novel v0.9.3 では最後のコマンドが優先されます。(ここでは <code>[こんにちは]</code> は無効となり、<code>[こんばんは]</code> のみ実行される)</p>
+<h2 id="基本的な構文">基本的な構文</h2>
+<h3 id="会話">会話</h3>
+<p>キャラクターの会話、またはナレーションの表示は、<code>[</code> と <code>]</code> の間に文章を挿入することで表示できます。</p>
+<h4 id="例">例</h4>
+<pre><code class="lang-sh"># 入力
+
+[こんにちは!]
+</code></pre>
+<pre><code class="lang-sh"># 出力
+
+&quot;こんにちは&quot;
+</code></pre>
+<h3 id="キャラクター">キャラクター</h3>
+<p>会話を行う、また立ち絵のキャラクターを表示する<a href="%E7%AB%8B%E3%81%A1%E7%B5%B5%E3%81%AB%E9%96%A2%E3%81%97%E3%81%A6%E3%81%AF%E4%BB%8A%E5%BE%8C%E5%AE%9F%E8%A3%85%E4%BA%88%E5%AE%9A">^image</a>ためには、このキャラクターという項目を操作します。</p>
+<h4 id="例1">例1</h4>
+<pre><code class="lang-sh"># 入力
+
+- アリス
+</code></pre>
+<pre><code class="lang-sh"># 出力
+
+アリス
+</code></pre>
+<h4 id="例2">例2</h4>
+<pre><code class="lang-sh"># 入力
+
+- アリス
+[こんにちは、ウサギさん。]
+
+[今日はいい天気ね。]
+
+- ウサギ
+[うん、昨日は考えられない、いい天気だね。]
+</code></pre>
+<pre><code class="lang-sh"># 出力
+
+アリス
+&quot;こんにちは、ウサギさん。&quot;
+
+&quot;今日はいい天気ね。&quot;
+
+ウサギ
+&quot;うん、昨日は考えられない、いい天気だね。&quot;
+</code></pre>
+<h3 id="感情">感情</h3>
+<p>(<em>Alice Novel では部分サポート</em>)</p>
+<p>キャラクターの表情やポーズなどの立ち絵を変更する<a href="%E7%AB%8B%E3%81%A1%E7%B5%B5%E3%81%AB%E9%96%A2%E3%81%97%E3%81%A6%E3%81%AF%E4%BB%8A%E5%BE%8C%E5%AE%9F%E8%A3%85%E4%BA%88%E5%AE%9A">^image</a>ためには、この&quot;感情&quot;という項目を変更します。</p>
+<h4 id="例1-1">例1</h4>
+<pre><code class="lang-sh"># 入力
+
+/ 驚き
+</code></pre>
+<pre><code class="lang-sh"># 出力
+
+(驚き)
+</code></pre>
+<h4 id="例2-1">例2</h4>
+<pre><code class="lang-sh"># 入力
+
+- アリス / 喜び
+[最高の紅茶ね!!]
+
+/ 悲しみ
+[だけど、エドワードが来てくれなかったのは残念だわ…]
+</code></pre>
+<pre><code class="lang-sh"># 出力
+
+アリス (喜び)
+
+&quot;最高の紅茶ね!!&quot;
+
+(悲しみ)
+&quot;だけど、エドワードが来てくれなかったのは残念だわ…&quot;
+</code></pre>
+<h3 id="場所">場所</h3>
+<p>場所を指定し、背景の画像を変更することができます。</p>
+<h4 id="例-1">例</h4>
+<pre><code class="lang-sh">&gt; アリスの庭.png
+</code></pre>
+<h3 id="音声の再生">音声の再生</h3>
+<p>音声ファイルを指定し、再生することができます。</p>
+<h4 id="例-2">例</h4>
+<p>再生:</p>
+<pre><code>bgm: 時計台の曲.mp3
+</code></pre>
+<p>停止:</p>
+<pre><code>bgm: 
+</code></pre>
+<h3 id="動画の再生">動画の再生</h3>
+<p>動画ファイルを指定し、再生することができます。</p>
+<h4 id="例-3">例</h4>
+<pre><code>movie: アリスが小さくなる.mp4
+</code></pre>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/AliceNovel/CommonNovel/blob/45/merge/docs/version/v0.0.x/novel-v0.9.3.ja.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>CommonNovel Spec | Commonnovel Spec </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="CommonNovel Spec | Commonnovel Spec ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/AliceNovel/CommonNovel/blob/45/merge/docs/version/latest.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="Commonnovel Spec">
+            Commonnovel Spec
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="1-introduction">1. Introduction</h1>
+
+<h2 id="11-what-is-anov">1.1. What is Anov?</h2>
+<p>Anov (Advanced-Novel) is a plain text format for creating novel games, based on conventions for indicating formatting in the novel game of Alice Novel. It was developed by <a href="https://github.com/Lemon73-Computing">Lemon73</a> and distributed in 2023 in the form of the <a href="https://github.com/AliceNovel/AliceNovel/tree/v0.9.0-alpha">Alice Novel v0.9.0-alpha</a> for running novel games.</p>
+<h2 id="12-why-is-a-spec-needed">1.2. Why is a spec needed?</h2>
+<p>Alice Novel v0.9.0-alpha to v0.9.4 do not specify the syntax unambiguously. (Ignore <a href="https://github.com/AliceNovel/AliceDocs/tree/d9661d5127fee02f33057ed77421afc23bb0634e/content/en/docs/anov">Alice Docs</a>)</p>
+<p>To make matters worse, because nothing in Anov counts as a “syntax error,” the divergence often isn’t discovered right away.</p>
+<h2 id="13-about-this-document">1.3. About this document</h2>
+<p>This document attempts to specify Anov syntax unambiguously. It contains many examples with side-by-side Anov and NovelIL.</p>
+<p>In the examples, the <code>→</code> character is used to represent tabs.</p>
+<h1 id="2-preliminaries">2. Preliminaries</h1>
+<h2 id="21-characters-and-lines">2.1. Characters and lines</h2>
+<p>To Be Determined...</p>
+<h2 id="22-tabs">2.2. Tabs</h2>
+<p>To Be Determined...</p>
+<h2 id="23-insecure-characters">2.3. Insecure characters</h2>
+<p>To Be Determined...</p>
+<h2 id="24-backslash-escapes">2.4. Backslash escapes</h2>
+<p>To Be Determined...</p>
+<h1 id="3-nodes-and-lines">3. Nodes and lines</h1>
+<h2 id="31-what-is-a-node">3.1. What is a node?</h2>
+<p>The CommonNovel uses divisions called <strong>nodes</strong>. These are the smallest units of reading in novel games, and each reading is performed on a node-by-node basis.</p>
+<p>A node indicates multiple lines from a blank line (a line containing only spaces, tabs, or line feed codes) to the next blank line.</p>
+<p>The node indicates an interval of zero or more lines, with (theoretically) no upper limit.</p>
+<h3 id="example-1">Example 1</h3>
+<pre><code class="lang-sh">- Alice
+[Hi!]
+
+- Rabbit
+[Hi, there.]
+
+</code></pre>
+<p>The first node includes the two lines; <code>- Alice</code> and <code>[Hi!]</code>. The next node includes the two lines; <code>- Rabbit</code> and <code>[Hi, there.]</code>.</p>
+<h3 id="example-2">Example 2</h3>
+<pre><code class="lang-sh">- Alice
+[Hi!]
+
+- Rabbit
+[Hi, there.]
+
+</code></pre>
+<p>This example is similar to <a href="#example-1">Example 1</a>, however there are two blank lines between <code>[Hi!]</code> and <code>- Rabbit</code>. So, the first node includes the two lines; <code>- Alice</code> and <code>[Hi!]</code>. But the next node does not include any line. (Treat as blank <code> </code> internally) Then, the last node includes the two lines; <code>- Rabbit</code> and <code>[Hi, there.]</code>.</p>
+<h3 id="example-3">Example 3</h3>
+<pre><code class="lang-sh">- Alice
+[Good morning!]
+[Hi.]
+
+</code></pre>
+<p>In this example, the same command is used twice in one node. In this case, the latter, <code>[Hi.]</code>, takes precedence.</p>
+<p>This is not an error, but it is not recommended. It is recommended that implementations show a warning, for example: <code>[Duplicate] The former is not used and should be deleted.</code></p>
+<h1 id="4-basic-commands">4. Basic Commands</h1>
+<p>This section describes the different kinds of commands that make up an Anov document. Extended commands added by plug-ins may be available, but this section describes the basic commands that can be used without plug-ins.</p>
+<h2 id="41-chat">4.1. Chat</h2>
+<p>(Before conversion: <code>main.anov</code>)</p>
+<pre><code class="lang-sh">[text]
+</code></pre>
+<p>(After conversion: <code>main.nil</code>)</p>
+<pre><code class="lang-json">{
+  &quot;cells&quot;: [
+    {
+      &quot;messages&quot;: &quot;text&quot; // or &quot;text&quot;
+    }
+  ]
+}
+</code></pre>
+<h2 id="42-character-name">4.2. Character name</h2>
+<p>(Before conversion: <code>main.anov</code>)</p>
+<pre><code class="lang-sh">- character-name
+</code></pre>
+<p>(After conversion: <code>main.nil</code>)</p>
+<pre><code class="lang-json">{
+  &quot;cells&quot;: [
+    {
+      &quot;character-name&quot;: &quot;character-name&quot;, // or &quot;name&quot;
+      &quot;images&quot;: {
+        &quot;foreground&quot;: &quot;character-name.png&quot; // or &quot;character&quot;
+      }
+    }
+  ]
+}
+</code></pre>
+<p>Also, this method can be used with <a href="#43-character-image--emotion">the emotion command</a>. See that section for more details.</p>
+<h2 id="43-character-image--emotion">4.3. Character image / Emotion</h2>
+<p>(Before conversion: <code>main.anov</code>)</p>
+<pre><code class="lang-sh">/ emotion
+</code></pre>
+<p>(After conversion: <code>main.nil</code>)</p>
+<pre><code class="lang-json">{
+  &quot;cells&quot;: [
+    {
+      &quot;images&quot;: {
+        &quot;foreground&quot;: &quot;(character-name)-emotion.png&quot; // or &quot;character&quot;
+      }
+    }
+  ]
+}
+</code></pre>
+<p>Basically, this method is used with <a href="#42-character-name">the character command</a>.</p>
+<p>(Before conversion: <code>main.anov</code>)</p>
+<pre><code class="lang-sh">- character-name / emotion
+</code></pre>
+<p>(After conversion: <code>main.nil</code>)</p>
+<pre><code class="lang-json">{
+  &quot;cells&quot;: [
+    {
+      &quot;character-name&quot;: &quot;character-name&quot;, // or &quot;name&quot;
+      &quot;images&quot;: {
+        &quot;foreground&quot;: &quot;character-name-emotion.png&quot; // or &quot;character&quot;
+      }
+    }
+  ]
+}
+</code></pre>
+<h2 id="44-background-image--location">4.4. Background image / Location</h2>
+<p>(Before conversion: <code>main.anov</code>)</p>
+<pre><code class="lang-sh">&gt; location
+</code></pre>
+<p>(After conversion: <code>main.nil</code>)</p>
+<pre><code class="lang-json">{
+  &quot;cells&quot;: [
+    {
+      &quot;images&quot;: {
+        &quot;background&quot;: &quot;location.png&quot;
+      }
+    }
+  ]
+}
+</code></pre>
+<h2 id="45-play-audio">4.5. Play audio</h2>
+<ul>
+<li><code>background</code>: The user can proceed to the next node while the audio is playing.</li>
+<li><code>foreground</code>: The user cannot proceed to the next node until the audio finishes playing.</li>
+</ul>
+<p>(Before conversion: <code>main.anov</code>)</p>
+<pre><code class="lang-sh">audio: music
+</code></pre>
+<p>(After conversion: <code>main.nil</code>)</p>
+<pre><code class="lang-json">{
+  &quot;cells&quot;: [
+    {
+      &quot;musics&quot;: { // or &quot;audio&quot;
+        &quot;background&quot;: &quot;music.mp3&quot;
+      }
+    }
+  ]
+}
+</code></pre>
+<p><strong>Stopping audio</strong></p>
+<p>(Before conversion: <code>main.anov</code>)</p>
+<pre><code class="lang-sh">audio: 
+</code></pre>
+<p>(After conversion: <code>main.nil</code>)</p>
+<pre><code class="lang-json">{
+  &quot;cells&quot;: [
+    {
+      &quot;musics&quot;: { // or &quot;audio&quot;
+        &quot;background&quot;: &quot;&quot;
+      }
+    }
+  ]
+}
+</code></pre>
+<h2 id="46-play-movie">4.6. Play movie</h2>
+<ul>
+<li><code>background</code>: The user can proceed to the next node while the movie is playing.</li>
+<li><code>foreground</code>: The user cannot proceed to the next node until the movie finishes playing.</li>
+</ul>
+<p>(Before conversion: <code>main.anov</code>)</p>
+<pre><code class="lang-sh">movie: movie
+</code></pre>
+<p>(After conversion: <code>main.nil</code>)</p>
+<pre><code class="lang-json">{
+  &quot;cells&quot;: [
+    {
+      &quot;movies&quot;: {
+        &quot;foreground&quot;: &quot;movie.mp4&quot;
+      }
+    }
+  ]
+}
+</code></pre>
+<h1 id="5-under-discussion">5. Under discussion</h1>
+<p><em>This section describes new functions that are under discussion.</em></p>
+<h2 id="51-extension-linking-to-external-files">5.1. Extension linking to external files</h2>
+<p>When loading external files such as image files, the file extension must be specified.</p>
+<p>Currently, the location command <code>&gt; location</code> serves both to specify the location and display the image, but there is debate as to whether it should be <code>&gt; location.png</code>, including the file extension. At present, <code>location.png</code>, including the file extension, is prioritised.</p>
+<h2 id="52-flagsbranching">5.2. Flags/Branching</h2>
+<p>In order to perform branch processing such as scenario branching, it is necessary to add flags and conditional branching specifications.</p>
+<h2 id="53-arguments">5.3. Arguments</h2>
+<p>There are situations where arguments are required, such as specifying the type of animation or the number of seconds. We are currently considering syntax such as <code>:fading</code> or <code>{fading}</code>.</p>
+<h2 id="54-plug-in-system">5.4. Plug-in system</h2>
+<p>(Advanced) It is necessary to consider introducing a plug-in system to enable processing other than basic commands. Plug-ins must be implemented with security issues in mind.</p>
+<h2 id="55-linking-to-another-file">5.5. Linking to another file</h2>
+<p>Example:</p>
+<pre><code class="lang-sh"># main.anov
+&lt;next.anov&gt;
+
+</code></pre>
+<p>This example shows linking from <code>main.anov</code> to <code>next.anov</code>.</p>
+<h2 id="56-anproj-format">5.6. Anproj-format</h2>
+<p>Anproj-format is a ZIP-based file format that includes Anov files, config files, image files, and other files. CommonNovel does not have an alternative.</p>
+<h1 id="appendix">Appendix</h1>
+<h2 id="license">License</h2>
+<p><a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0</a></p>
+<p>Copyright © 2023-2025, Alice Project.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://spec.commonmark.org/0.31.2">commonmark-spec 0.31.2</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/AliceNovel/CommonNovel/blob/45/merge/docs/version/latest.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

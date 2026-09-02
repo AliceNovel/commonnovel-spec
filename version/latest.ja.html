@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>CommonNovel 仕様 | Commonnovel Spec </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="CommonNovel 仕様 | Commonnovel Spec ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/AliceNovel/CommonNovel/blob/45/merge/docs/version/latest.ja.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="Commonnovel Spec">
+            Commonnovel Spec
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="1-導入">1. 導入</h1>
+
+<h2 id="11-anov-構文とは">1.1. Anov 構文とは?</h2>
+<p>Anov (Advanced-Novel) はノベルゲームの開発のための単純なテキストフォーマットです。Alice Project の創始者である <a href="https://github.com/Lemon73-Computing">Lemon73</a> によって開発され、2023年に <a href="https://github.com/AliceNovel/AliceNovel/tree/v0.9.0-alpha">Alice Novel v0.9.0-alpha</a> でノベルゲームを動かせる形として配布されました。</p>
+<h2 id="12-仕様の必要性">1.2. 仕様の必要性</h2>
+<p>Alice Novel v0.9.0-alpha から v0.9.4 にかけて、具体的な仕様書はありませんでした。(<a href="https://github.com/AliceNovel/AliceDocs/tree/d9661d5127fee02f33057ed77421afc23bb0634e/content/ja/docs/anov">Alice Docs</a> を除いて)</p>
+<p>これは、Anov において「構文エラー」が表示されないため、どこが間違えているのかの発見が難しく問題となっていました。</p>
+<h2 id="13-この資料について">1.3. この資料について</h2>
+<p>この資料は Anov 構文を明確に定義することを目的としており、Anov とそれに対応する NovelIL の用例を多数掲載しています。</p>
+<p>例として、この<code>→</code>文字は、<kbd>Tab</kbd> として利用されます。</p>
+<h1 id="2-まえがき">2. まえがき</h1>
+<h2 id="21-文字と行">2.1. 文字と行</h2>
+<p>追記予定</p>
+<h2 id="22-タブ">2.2. タブ</h2>
+<p>追記予定</p>
+<h2 id="23-安全でない文字">2.3. 安全でない文字</h2>
+<p>追記予定</p>
+<h2 id="24-バックスラッシュによる削除">2.4. バックスラッシュによる削除</h2>
+<p>追記予定</p>
+<h1 id="3-節と行">3. 節と行</h1>
+<h2 id="31-節とは">3.1. 節とは?</h2>
+<p>CommonNovel では、<strong>節</strong> (ノード) と呼ばれる区分を利用します。ノベルゲームにおける最小の読み取り単位であり、一度の読み取りはこの単位ごとに行われます。</p>
+<p>節は、空白行 (空白または、スペース、タブ、改行コードのみの行) から次の空白行までの複数行を示します。</p>
+<p>節は0行以上、(理論上は) 上限なしの区間を示しています。</p>
+<p>以下に例を示します:</p>
+<h3 id="例1-通常の例">例1 (通常の例)</h3>
+<pre><code class="lang-sh">- アリス
+[こんにちは!!]
+
+- うさぎ
+[はい、こんにちは。]
+
+</code></pre>
+<p>この例では、初めの節は <code>- アリス</code> と <code>[こんにちは!!]</code> の2行となります。続く節は、<code>- うさぎ</code> と <code>[はい、こんにちは。]</code> の2行が対象です。</p>
+<h3 id="例2-空白行の連続">例2 (空白行の連続)</h3>
+<pre><code class="lang-sh">- アリス
+[こんにちは!!]
+
+
+- うさぎ
+[はい、こんにちは。]
+
+</code></pre>
+<p>この例は、<a href="#%E4%BE%8B1-%E9%80%9A%E5%B8%B8%E3%81%AE%E4%BE%8B">例1</a>と類似していますが、<code>[こんにちは!!]</code> と <code>- うさぎ</code> の間が2行空いています。そのため、初めの節は先程と同様に <code>- アリス</code> と <code>[こんにちは!!]</code> の2行ですが、その次の節は、<code> </code> (空白) となります。<a href="%E5%85%AC%E5%BC%8F%E4%BB%95%E6%A7%98%E4%B8%8A%E3%81%AF%E3%81%93%E3%81%AE%E9%80%9A%E3%82%8A%E3%81%A7%E3%81%99%E3%81%8C%E3%80%81%E3%81%84%E3%81%8F%E3%81%A4%E3%81%8B%E3%81%AE%E3%83%84%E3%83%BC%E3%83%AB%E3%81%AF%E7%A9%BA%E7%99%BD%E3%81%AE%E7%AF%80%E3%82%92%E5%89%8A%E9%99%A4%E3%81%99%E3%82%8B%E6%A9%9F%E8%83%BD%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B%E4%BA%88%E5%AE%9A%E3%81%A7%E3%81%99%E3%80%82">^line-of-nothing</a>そして、最後の節が <code>- うさぎ</code> と <code>[はい、こんにちは。]</code> の2行となります。</p>
+<h3 id="例3-節内の重複">例3 (節内の重複)</h3>
+<pre><code class="lang-sh">- アリス
+[おはようございます。]
+[こんにちは。]
+
+</code></pre>
+<p>この例は、1つの節で同じコマンドを2回使う例です。この場合は、後者である <code>[こんにちは。]</code> を優先して読み込みます。</p>
+<p>これは仕様上問題はありません。しかし、可能なら<code>[重複] 前者は利用されないため不要です。</code>と表示することを推奨します。</p>
+<h1 id="4-基本コマンド">4. 基本コマンド</h1>
+<p>本章では、Anov ファイルを構成する様々なコマンドについて記載しています。プラグイン不要で利用できる「基本コマンド」について記載しており、プラグインによって利用できる「拡張コマンド」については記載しません。</p>
+<h2 id="41-会話">4.1. 会話</h2>
+<p>(変換前: <code>main.anov</code>)</p>
+<pre><code class="lang-sh">[テキスト]
+</code></pre>
+<p>(変換後: <code>main.nil</code>)</p>
+<pre><code class="lang-json">{
+  &quot;cells&quot;: [
+    {
+      &quot;messages&quot;: &quot;テキスト&quot; // または &quot;text&quot;
+    }
+  ]
+}
+</code></pre>
+<h2 id="42-キャラクター名">4.2. キャラクター名</h2>
+<p>(変換前: <code>main.anov</code>)</p>
+<pre><code class="lang-sh">- キャラクター名
+</code></pre>
+<p>(変換後: <code>main.nil</code>)</p>
+<pre><code class="lang-json">{
+  &quot;cells&quot;: [
+    {
+      &quot;character-name&quot;: &quot;キャラクター名&quot;, // または &quot;name&quot;
+      &quot;images&quot;: {
+        &quot;foreground&quot;: &quot;キャラクター名.png&quot; // または &quot;character&quot;
+      }
+    }
+  ]
+}
+</code></pre>
+<p>後述する<a href="#43-%E3%82%AD%E3%83%A3%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%BC%E7%94%BB%E5%83%8F%E6%84%9F%E6%83%85">感情</a>が追加で利用できます。詳細はそちらを参照してください。</p>
+<h2 id="43-キャラクター画像感情">4.3. キャラクター画像/感情</h2>
+<p>(変換前: <code>main.anov</code>)</p>
+<pre><code class="lang-sh">/ 感情
+</code></pre>
+<p>(変換後: <code>main.nil</code>)</p>
+<pre><code class="lang-json">{
+  &quot;cells&quot;: [
+    {
+      &quot;images&quot;: {
+        &quot;foreground&quot;: &quot;(キャラクター名)-感情.png&quot; // または &quot;character&quot;
+      }
+    }
+  ]
+}
+</code></pre>
+<p>基本的に、先述した<a href="#42-%E3%82%AD%E3%83%A3%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%BC%E5%90%8D">キャラクター</a>と同時に利用します。</p>
+<p>(変換前: <code>main.anov</code>)</p>
+<pre><code class="lang-sh">- キャラクター / 感情
+</code></pre>
+<p>(変換後: <code>main.nil</code>)</p>
+<pre><code class="lang-json">{
+  &quot;cells&quot;: [
+    {
+      &quot;character-name&quot;: &quot;キャラクター名&quot;, // または &quot;name&quot;
+      &quot;images&quot;: {
+        &quot;foreground&quot;: &quot;キャラクター名-感情.png&quot; // または &quot;character&quot;
+      }
+    }
+  ]
+}
+</code></pre>
+<h2 id="44-背景画像場所">4.4. 背景画像/場所</h2>
+<p>(変換前: <code>main.anov</code>)</p>
+<pre><code class="lang-sh">&gt; 場所
+</code></pre>
+<p>(変換後: <code>main.nil</code>)</p>
+<pre><code class="lang-json">{
+  &quot;cells&quot;: [
+    {
+      &quot;images&quot;: {
+        &quot;background&quot;: &quot;場所.png&quot;
+      }
+    }
+  ]
+}
+</code></pre>
+<h2 id="45-音声再生">4.5. 音声再生</h2>
+<ul>
+<li><code>background</code>: 音声を再生しながら節を進めることができます。</li>
+<li><code>foreground</code>: 音声が終わるまで節を進めることができません。</li>
+</ul>
+<p>(変換前: <code>main.anov</code>)</p>
+<pre><code class="lang-sh">audio: 音声
+</code></pre>
+<p>(変換後: <code>main.nil</code>)</p>
+<pre><code class="lang-json">{
+  &quot;cells&quot;: [
+    {
+      &quot;musics&quot;: { // または &quot;audio&quot;
+        &quot;background&quot;: &quot;音声.mp3&quot;
+      }
+    }
+  ]
+}
+</code></pre>
+<p><strong>音声の停止</strong></p>
+<p>(変換前: <code>main.anov</code>)</p>
+<pre><code class="lang-sh">audio: 
+</code></pre>
+<p>(変換後: <code>main.nil</code>)</p>
+<pre><code class="lang-json">{
+  &quot;cells&quot;: [
+    {
+      &quot;musics&quot;: { // または &quot;audio&quot;
+        &quot;background&quot;: &quot;&quot;
+      }
+    }
+  ]
+}
+</code></pre>
+<h2 id="46-動画再生">4.6. 動画再生</h2>
+<ul>
+<li><code>background</code>: 動画を再生しながら節を進めることができます。</li>
+<li><code>foreground</code>: 動画が終わるまで節を進めることができません。</li>
+</ul>
+<p>(変換前: <code>main.anov</code>)</p>
+<pre><code class="lang-sh">movie: 動画
+</code></pre>
+<p>(変換後: <code>main.nil</code>)</p>
+<pre><code class="lang-json">{
+  &quot;cells&quot;: [
+    {
+      &quot;movies&quot;: {
+        &quot;foreground&quot;: &quot;動画.mp4&quot;
+      }
+    }
+  ]
+}
+</code></pre>
+<h1 id="5-議論中">5. 議論中</h1>
+<p><em>本章は現在議論中の機能について記載しています。</em></p>
+<h2 id="51-外部ファイルの拡張子指定">5.1. 外部ファイルの拡張子指定</h2>
+<p>画像ファイルなど、外部ファイルの読み込みの際には拡張子を指定する必要があります。</p>
+<p>現在、場所コマンド <code>&gt; 場所</code> は、場所の指定と画像の表示を兼任していますが、拡張子を含む <code>&gt; 場所.png</code> とするべきかという議論です。現状は拡張子を含む <code>場所.png</code> を優先しています。</p>
+<!--
+昔のバージョンでは、拡張子を含んでいませんでしたが、かつては場所指定に関しても Json ファイルで行う計画だったからです。現在は、場所や人物の設定ファイルは作成しないことにほとんど決定しています。
+-->
+<h2 id="52-フラグ条件分岐">5.2. フラグ/条件分岐</h2>
+<p>シナリオ分岐などの分岐処理を行うためには、フラグや条件分岐の仕様を追加する必要があります。</p>
+<h2 id="53-引数">5.3. 引数</h2>
+<p>アニメーションの種類や、秒数の指定など、引数が必要になる場面が存在します。現在は <code>:fading</code> や <code>{fading}</code> などの構文を構想しています。</p>
+<h2 id="54-プラグイン">5.4. プラグイン</h2>
+<p>(高度) 基本コマンド以外の処理ができるように、プラグインシステムの導入を検討する必要があります。プラグインはセキュリティー問題を考慮して実装する必要があります。</p>
+<h2 id="55-別ファイルへのリンク">5.5. 別ファイルへのリンク</h2>
+<p>1つのファイルが肥大化しないように、別のファイルを開く機能を追加する必要があります。</p>
+<p>例:</p>
+<pre><code class="lang-sh"># main.anov
+&lt;next.anov&gt;
+
+</code></pre>
+<p>これは、<code>main.anov</code> ファイルから、<code>next.anov</code> ファイルに移動する例を示しています。</p>
+<h2 id="56-anproj-形式">5.6. Anproj 形式</h2>
+<p>Anov ファイルでは、設定ファイルや画像ファイルを統合するため、Anproj (ZIP) 形式のファイルが利用されてきました。現状、CommonNovel にはこれに類する、または代替できるシステムが提供されておらず、実環境での利用を想定すると、機能が不足していると考えられます。</p>
+<h1 id="備考">備考</h1>
+<h2 id="ライセンス">ライセンス</h2>
+<p><a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ja">CC-BY-SA 4.0</a></p>
+<p>Copyright © 2023-2025, Alice Project.</p>
+<h2 id="参考">参考</h2>
+<ul>
+<li><a href="https://commonmark-ja.readthedocs.io/ja/latest/spec.html">commonmark-spec 0.29</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/AliceNovel/CommonNovel/blob/45/merge/docs/version/latest.ja.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

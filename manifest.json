@@ -1,0 +1,219 @@
+{
+  "source_base_path": "/home/runner/work/CommonNovel/CommonNovel/docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CommonNovel.Compiler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CommonNovel.Compiler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CommonNovel.Compiler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CommonNovel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CommonNovel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "CommonNovel",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "version/latest.ja.md",
+      "output": {
+        ".html": {
+          "relative_path": "version/latest.ja.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "version/latest.md",
+      "output": {
+        ".html": {
+          "relative_path": "version/latest.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "version/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "version/toc.html"
+        },
+        ".json": {
+          "relative_path": "version/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "version/v0.0.x/console-v0.2.0.ja.md",
+      "output": {
+        ".html": {
+          "relative_path": "version/v0.0.x/console-v0.2.0.ja.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "version/v0.0.x/docs-20250328.ja.md",
+      "output": {
+        ".html": {
+          "relative_path": "version/v0.0.x/docs-20250328.ja.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "version/v0.0.x/docs-20250328.md",
+      "output": {
+        ".html": {
+          "relative_path": "version/v0.0.x/docs-20250328.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "version/v0.0.x/issues.ja.md",
+      "output": {
+        ".html": {
+          "relative_path": "version/v0.0.x/issues.ja.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "version/v0.0.x/novel-v0.9.3.ja.md",
+      "output": {
+        ".html": {
+          "relative_path": "version/v0.0.x/novel-v0.9.3.ja.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "version/v0.1.x/v0.1.0.ja.md",
+      "output": {
+        ".html": {
+          "relative_path": "version/v0.1.x/v0.1.0.ja.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "version/v0.1.x/v0.1.0.md",
+      "output": {
+        ".html": {
+          "relative_path": "version/v0.1.x/v0.1.0.html"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

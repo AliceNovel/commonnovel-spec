@@ -1,0 +1,55 @@
+name: Publish DocFX Spec/API Documentations to GitHub Pages
+
+# Trigger the action on push to tag
+on:
+  push:
+    tags:
+    - "v*"
+  pull_request:
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  actions: read
+  pages: write
+  id-token: write
+  contents: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  release-docfx:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Setup and Build DocFX
+        run: |
+          dotnet tool update -g docfx
+          docfx docs/docfx.json
+
+      - name: Upload artifact (1)
+        uses: actions/upload-artifact@v4
+        with:
+          name: spec-api-docs
+          path: docs/_site
+      - name: Upload artifact (2)
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: docs/_site
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs/_site
+          force_orphan: true

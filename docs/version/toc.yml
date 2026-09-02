@@ -1,0 +1,26 @@
+- name: Latest Spec
+  href: latest.md
+- name: Latest Spec (ja)
+  href: latest.ja.md
+
+- name: v0.0.x
+  href: v0.0.x/novel-v0.9.3.ja.md
+  items:
+    - name: AliceConsole v0.2.0 (ja)
+      href: v0.0.x/console-v0.2.0.ja.md
+    - name: AliceNovel v0.9.3 (ja)
+      href: v0.0.x/novel-v0.9.3.ja.md
+    - name: AliceDocs 2025/3/28
+      href: v0.0.x/docs-20250328.md
+    - name: AliceDocs 2025/3/28 (ja)
+      href: v0.0.x/docs-20250328.ja.md
+    - name: Issues (ja)
+      href: v0.0.x/issues.ja.md
+
+- name: v0.1.x
+  href: v0.1.x/v0.1.0.md
+  items:
+    - name: v0.1.0
+      href: v0.1.x/v0.1.0.md
+    - name: v0.1.0 (ja)
+      href: v0.1.x/v0.1.0.ja.md

@@ -1,8 +1,8 @@
 ---
 title: CommonNovel Spec
 author: Alice Project
-version: '0.1.0'
-date: '2025-07-29'
+version: '0.1.1-alpha'
+date: '2026-05-11'
 license: '[CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)'
 ---
 
